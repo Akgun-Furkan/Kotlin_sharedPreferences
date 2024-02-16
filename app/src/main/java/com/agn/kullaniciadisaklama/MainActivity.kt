@@ -9,7 +9,7 @@ import com.agn.kullaniciadisaklama.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    //var sharedP:SharedPreferences?=null
+    //var sharedP:SharedPreferences?=null ===>tek verilik kayılar için kullanışlıdır.
     lateinit var sharedP:SharedPreferences
     var alinanKullanici:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +40,12 @@ class MainActivity : AppCompatActivity() {
 
     }
     fun Sil(view: View){
+        alinanKullanici=sharedP.getString("kullanici","")
+        if(alinanKullanici!=null){
+            binding.textView.text="kaydedilen kullanıcı adı:"
+            sharedP.edit().remove("kullanici").apply()
+        }
+
 
     }
 }
