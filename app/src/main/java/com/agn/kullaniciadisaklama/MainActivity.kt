@@ -1,5 +1,6 @@
 package com.agn.kullaniciadisaklama
 
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -46,6 +47,11 @@ class MainActivity : AppCompatActivity() {
             sharedP.edit().remove("kullanici").apply()
         }
 
+
+    }
+    fun sayac (view: View){
+        val intent=Intent(applicationContext,MainActivity2::class.java)
+        startActivity(intent)
 
     }
 }
